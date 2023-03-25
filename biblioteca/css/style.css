@@ -1,0 +1,203 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+a:link, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  color: #333;
+  font-family: "PT Sans Narrow";
+  font-size: 1em;
+}
+
+p {
+  text-align: justify;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1050px;
+  margin: 20px auto 0 auto;
+  background: #f1f1f1;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.top {
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.banner {
+  overflow: hidden;
+  width: 100%;
+  height: 350px;
+  margin-top: 20px;
+  border-top: 3px solid #1bab0e;
+  border-bottom: 3px solid #1bab0e;
+  position: relative;
+}
+.banner span {
+  font-weight: normal;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+}
+
+nav {
+  border-top: 3px solid #1bab0e;
+  border-bottom: 3px solid #1bab0e;
+  margin-top: 20px;
+  overflow: hidden;
+  background-color: #1bab0e;
+  color: #f1f1f1;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+  margin-left: 35px;
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: uppercase;
+  padding: 20px;
+  font-size: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+fieldset {
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 20px;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+}
+
+.pesquisa {
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 20px;
+  width: 100%;
+  background: #fff;
+  text-align: left;
+}
+
+.callout {
+  margin-top: 20px;
+  border-top: 3px solid #1bab0e;
+  border-bottom: 3px solid #1bab0e;
+  overflow: hidden;
+  padding: 20px;
+  width: 100%;
+  background: #fff;
+  text-align: justify;
+}
+
+.button {
+  background-color: #1bab0e;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "PT Sans Narrow";
+  font-size: 16px;
+  cursor: pointer;
+  width: 135px;
+  text-align: center;
+}
+
+.button2 {
+  background-color: #FA5832;
+  border: none;
+  color: black;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "PT Sans Narrow";
+  font-size: 16px;
+  cursor: pointer;
+  width: 135px;
+  text-align: center;
+}
+
+.button3 {
+  background-color: #3A8FDE;
+  border: none;
+  color: black;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "PT Sans Narrow";
+  font-size: 16px;
+  cursor: pointer;
+  width: 135px;
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  margin: 0 auto;
+  color: #333;
+  background: white;
+  border: 1px solid grey;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+table thead th,
+table tfoot th {
+  color: #777;
+  background: rgba(0,0,0,.1);
+}
+table caption {
+  padding:.5em;
+}
+table th,
+table td {
+  padding: .5em;
+  border: 1px solid lightgrey;
+}
+
+.footer {
+  text-align: center;
+  max-width: 1050px;
+  width: 100%;
+  background-color: #1bab0e;
+  padding: 20px;
+  margin: 0 auto;
+  overflow: hidden;
+}
