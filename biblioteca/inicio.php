@@ -54,7 +54,7 @@ include('protect.php');
             include("./principal/resultado.php");
             break;
           default:
-            // nada
+            include("./principal/listarPesquisar.php");
         }
         ?>
       </fieldset>
