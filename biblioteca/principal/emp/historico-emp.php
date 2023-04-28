@@ -41,8 +41,8 @@
 				print "<td>".$row->id_acervo."</td>";
 				print "<td>".$row->titulo_obra."</td>";
 				print "<td>".$row->nome_func."</td>";
-				print "<td>".$row->data_emp."</td>";
-				print "<td>".$row->data_dev."</td>";
+				print "<td>".date('d-m-Y', strtotime($row->data_emp))."</td>";
+				print "<td>".date('d-m-Y', strtotime($row->data_dev))."</td>";
 				print "<td>".$row->notas."</td>";
 			}
 			print "</table>";
