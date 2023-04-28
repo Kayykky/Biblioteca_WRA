@@ -36,7 +36,7 @@
 				print "<td>".$row->nome_user."</td>";
 				print "<td>".$row->turma_user."</td>";
 				print "<td>".$row->nome_func."</td>";
-				print "<td>".$row->data_dev."</td>";
+				print "<td>".date('d-m-Y', strtotime($row->data_dev))."</td>";
 				print "<td>
 						<button onclick=\"location.href='?page=validar&id=".$row->id."';\" class='button'>Validar</button>
 				   		</td>";
