@@ -41,15 +41,7 @@
                 while ($row = $res->fetch_object()) {
                     print "<tr>";
                     print "<td>".$row->id."</td>";              
-                    print "<td>";
-                    if ($row->status == "Livre") {
-                        print "<span style='color: green; font-size: 20px;'>&#9679;</span>";
-                    } else if ($row->status == "Conserto"){
-                        print "<span style='color: yellow; font-size: 20px;'>&#9679;</span>"; 
-                    } else {
-                        print "<span style='color: red; font-size: 20px;'>&#9679;</span>"; 
-                    }
-                    print "</td>";
+                    print "<td>".$row->status."</td>";        
                     print "</tr>";
                 }
                 print "</table>";
