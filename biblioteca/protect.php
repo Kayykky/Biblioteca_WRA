@@ -5,6 +5,15 @@
   <title>Acesso negado</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .protect {
+      background-color: #ffe6e6;
+      border: 1px solid #ff9999;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  </style>
   <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
 </head>
 <body>
