@@ -42,7 +42,7 @@ include('protect.php');
     <form action="?page=pesquisar" method="post">
       <fieldset class="pesquisa">
         <label for="pesquisa">Pesquisar:</label><br>
-        <input type="text" id="pesquisa" name="pesquisa" placeholder="Título da obra, autor ou gênero" style="width: 450px" required><br><br>
+        <input type="text" id="pesquisa" name="pesquisa" placeholder="Título da obra, autor ou gênero" style="width: 450px"><br><br>
         <input class="button" type="submit" value="Pesquisar">
         <?php
         include("conexao.php");
