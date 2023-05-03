@@ -24,7 +24,7 @@
   
   <div id="inicio" class="tab">
     <div class="banner">
-     <img src="https://img.freepik.com/fotos-gratis/aluno-compartilhando-seu-conhecimento-com-seus-colegas_329181-8498.jpg?w=1060&t=st=1675531079~exp=1675531679~hmac=3a255860daae4325192d8a818c33eff2ab2858f66ad6cf4044c8c9b49ca1f494">
+     <img src="./assets/livros.jpg">
      <span>Procure o título que você deseja de forma rápida.</span>
     </div>
   
