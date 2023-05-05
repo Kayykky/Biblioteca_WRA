@@ -48,7 +48,7 @@ include('protect.php');
         include("conexao.php");
         switch(@$_REQUEST["page"]){
           case 'pesquisar':
-            include("./principal/pesquisa/pesquisar.php");
+            include("./principal/pesquisar.php");
             break;
           case 'resultado':
             include("./principal/pesquisa/resultado_admin.php");
