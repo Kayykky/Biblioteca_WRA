@@ -41,7 +41,7 @@
                 while ($row = $res->fetch_object()) {
                     print "<tr>";
                     print "<td>".$row->id."</td>";              
-                    print "<td>".$row->status."</td>";        
+                    print "<td>".$row->status."</td>";     
                     print "</tr>";
                 }
                 print "</table>";

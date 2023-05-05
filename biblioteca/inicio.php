@@ -42,17 +42,20 @@ include('protect.php');
     <form action="?page=pesquisar" method="post">
       <fieldset class="pesquisa">
         <label for="pesquisa">Pesquisar:</label><br>
-        <input type="text" id="pesquisa" name="pesquisa" placeholder="Título da obra, autor ou gênero" style="width: 450px"><br><br>
+        <input type="text" id="pesquisa" name="pesquisa" placeholder="Título da obra, autor ou gênero" style="width: 450px" required><br><br>
         <input class="button" type="submit" value="Pesquisar">
         <?php
         include("conexao.php");
         switch(@$_REQUEST["page"]){
           case 'pesquisar':
-            include("./principal/pesquisar.php");
+            include("./principal/pesquisa/pesquisar.php");
             break;
           case 'resultado':
-            include("./principal/resultado.php");
+            include("./principal/pesquisa/resultado_admin.php");
             break;
+          case 'salvar':
+              include("./principal/obra/salvar-obra.php");
+              break;
           default:
             include("./principal/listarPesquisar.php");
         }

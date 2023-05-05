@@ -63,7 +63,7 @@
 			break;
 
 		case 'excluir':
-			
+
 			$id = $_REQUEST['id'];
 			$sql = "SELECT status FROM acervo WHERE id = $id";
 			$res = $conn->query($sql);
@@ -93,31 +93,45 @@
 			}
 
 		case 'conserto':
-			
-			$status = '';
-			$sql_status = "SELECT status FROM acervo WHERE id = ".$_REQUEST['id'];
-			$res_status = $conn->query($sql_status);
-			if ($res_status) {
-			    $row_status = $res_status->fetch_object();
-			    $status = $row_status->status;
-			}
 
-			if ($status == 'Conserto') {
-			    $sql = "UPDATE acervo SET status = 'Livre' WHERE id = ".$_REQUEST['id'];
-			} else {
-			    $sql = "UPDATE acervo SET status = 'Conserto' WHERE id = ".$_REQUEST['id'];
-			}
-
+			$id = $_REQUEST['id'];
+			$sql = "SELECT status FROM acervo WHERE id = $id";
 			$res = $conn->query($sql);
-
-			if ($res) {
-			    print "<script>alert('Status atualizado');</script>";
-			    print "<script>location.href='?page=default';</script>;";
+			
+			if ($res && $res->num_rows > 0) {
+				$row = $res->fetch_assoc();
+				$status = $row['status'];
+			
+				if ($status == "Conserto") {
+					$sql = "UPDATE acervo SET status = 'Livre' WHERE id = ".$_REQUEST['id'];
+					$res = $conn->query($sql);
+			
+					if ($res==true) {
+						print "<script>alert('Status atalizado');</script>";
+						print "<script>location.href='?page=default';</script>";
+					} else {
+						print "<script>alert('ERROR');</script>";
+						print "<script>location.href='?page=default';</script>";
+					}
+				} else if ($status == "Livre") {
+					$sql = "UPDATE acervo SET status = 'Conserto' WHERE id = ".$_REQUEST['id'];
+					$res = $conn->query($sql);
+			
+					if ($res==true) {
+						print "<script>alert('Status atalizado');</script>";
+						print "<script>location.href='?page=default';</script>";
+					} else {
+						print "<script>alert('ERROR');</script>";
+						print "<script>location.href='?page=default';</script>";
+					}
+				} else {
+					print "<script>alert('Status não é Livre');</script>";
+					print "<script>location.href='?page=default';</script>";
+				}
 			} else {
-			    print "<script>alert('ERROR');</script>";
-			    print "<script>location.href='?page=default';</script>;";
+				print "<script>alert('ID não encontrado');</script>";
+				print "<script>location.href='?page=default';</script>";
 			}
-			break;
 			
 		case 'excluirObra':
 
