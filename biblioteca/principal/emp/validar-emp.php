@@ -15,7 +15,7 @@
 		<input type="text" name="id_user" value="<?php echo $row->id_user ?>" readonly><br><br>
 
 		<label>ID Livro:</label><br>
-		<input type="text" name="id_user" value="<?php echo $row->id_acervo ?>" readonly><br><br>
+		<input type="text" name="id_acervo" value="<?php echo $row->id_acervo ?>" readonly><br><br>
 
 		<label>Notas:</label><br>
 		<textarea name="notas" value="Ok!"></textarea><br><br>
@@ -23,7 +23,7 @@
 		<label>Status:</label><br>
 		<select name="status">
 			<option value="Livre" selected>Livre</option>
-			<option value="Conserto" selected>Conserto</option>
+			<option value="Conserto">Conserto</option>
 		</select><br><br>
 	
 		<button type="submit" class="button">Enviar</button>

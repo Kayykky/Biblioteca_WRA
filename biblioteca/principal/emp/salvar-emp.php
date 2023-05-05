@@ -36,8 +36,10 @@
 
 		case 'excluir':
 
-			$sql = "UPDATE acervo SET status = ".$_POST['$status']." WHERE id ".$_REQUEST['id_acervo'];
-			$res = $conn->query($sql);
+			$sql = "UPDATE acervo SET status = ? WHERE id = ?";
+			$stmt = $conn->prepare($sql);
+			$stmt->bind_param("si", $_POST['status'], $_REQUEST['id_acervo']);
+			$stmt->execute();
 
 			$sql = "SELECT * FROM emprestimo WHERE id=".$_REQUEST['id'];
 			$res = $conn->query($sql);
@@ -52,14 +54,13 @@
 			$res = $conn->query($sql);
 
 			if ($res==true) {
-			    print "<script>alert('Validado');</script>";
-			    print "<script>location.href='?page=default';</script>;";
+				print "<script>alert('Validado');</script>";
+				print "<script>location.href='?page=default';</script>;";
 			} else{
-			    print "<script>alert('ERROR');</script>";
-			    print "<script>location.href='?page=default';</script>;";
+				print "<script>alert('ERROR');</script>";
+				print "<script>location.href='?page=default';</script>;";
 			}
 			break;
-
 
 		case 'excluirHist':
 
