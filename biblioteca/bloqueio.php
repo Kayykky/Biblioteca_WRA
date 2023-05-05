@@ -20,7 +20,7 @@
 <div class="wrapper">
     <fieldset>
         <div class='protect'>Você não pode acessar esta página porque não está logado. <br><br>
-        <button onclick="location.href='index.php'" class='button3'>Entrar</button></div>";
+        <button onclick="location.href='index.php'" class='button3'>Entrar</button></div>
     </fieldset>
 </div>
 
