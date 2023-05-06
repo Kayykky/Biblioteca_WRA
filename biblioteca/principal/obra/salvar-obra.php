@@ -67,29 +67,32 @@
 			$id = $_REQUEST['id'];
 			$sql = "SELECT status FROM acervo WHERE id = $id";
 			$res = $conn->query($sql);
-			
+
 			if ($res && $res->num_rows > 0) {
-				$row = $res->fetch_assoc();
-				$status = $row['status'];
-			
-				if ($status == "Livre") {
-					$sql = "DELETE FROM acervo WHERE id = $id";
-					$res = $conn->query($sql);
-			
-					if ($res==true) {
-						print "<script>alert('Deletado');</script>";
-						print "<script>location.href='?page=default';</script>";
-					} else {
-						print "<script>alert('ERROR');</script>";
-						print "<script>location.href='?page=default';</script>";
-					}
-				} else {
-					print "<script>alert('Status não é Livre');</script>";
-					print "<script>location.href='?page=default';</script>";
-				}
+			    $row = $res->fetch_assoc();
+			    $status = $row['status'];
+
+			    if ($status == "Livre") {
+			        $sql = "DELETE FROM acervo WHERE id = $id";
+			        $res = $conn->query($sql);
+
+			        if ($res==true) {
+			            print "<script>alert('Deletado');</script>";
+			            print "<script>location.href='?page=default';</script>";
+			        } else {
+			            print "<script>alert('ERROR');</script>";
+			            print "<script>location.href='?page=default';</script>";
+			        }
+			    } else if ($status == "Conserto") {
+			        print "<script>alert('O status do acervo está em conserto e não pode ser excluído');</script>";
+			        print "<script>location.href='?page=default';</script>";
+			    } else {
+			        print "<script>alert('Status não é Livre');</script>";
+			        print "<script>location.href='?page=default';</script>";
+			    }
 			} else {
-				print "<script>alert('ID não encontrado');</script>";
-				print "<script>location.href='?page=default';</script>";
+			    print "<script>alert('ID não encontrado');</script>";
+			    print "<script>location.href='?page=default';</script>";
 			}
 
 		case 'conserto':
