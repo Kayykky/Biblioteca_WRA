@@ -107,7 +107,7 @@
 					$res = $conn->query($sql);
 			
 					if ($res==true) {
-						print "<script>alert('Status atalizado');</script>";
+						print "<script>alert('Status atualizado');</script>";
 						print "<script>location.href='?page=default';</script>";
 					} else {
 						print "<script>alert('ERROR');</script>";
@@ -118,7 +118,7 @@
 					$res = $conn->query($sql);
 			
 					if ($res==true) {
-						print "<script>alert('Status atalizado');</script>";
+						print "<script>alert('Status atualizado');</script>";
 						print "<script>location.href='?page=default';</script>";
 					} else {
 						print "<script>alert('ERROR');</script>";
