@@ -83,9 +83,6 @@
 			            print "<script>alert('ERROR');</script>";
 			            print "<script>location.href='?page=default';</script>";
 			        }
-			    } else if ($status == "Conserto") {
-			        print "<script>alert('O status do acervo está em conserto e não pode ser excluído');</script>";
-			        print "<script>location.href='?page=default';</script>";
 			    } else {
 			        print "<script>alert('Status não é Livre');</script>";
 			        print "<script>location.href='?page=default';</script>";
@@ -94,6 +91,7 @@
 			    print "<script>alert('ID não encontrado');</script>";
 			    print "<script>location.href='?page=default';</script>";
 			}
+			break;
 
 		case 'conserto':
 
