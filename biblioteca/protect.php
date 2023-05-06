@@ -4,6 +4,7 @@
      }
 
     if(!isset($_SESSION['id'])) {
-      header("location: ./bloqueio.php");
+      echo '<script>alert("Você não está logado");history.go(-1);</script>';
+      exit;
      }
 ?>
