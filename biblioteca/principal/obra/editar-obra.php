@@ -21,6 +21,9 @@
 
 		<label>Edição:</label><br>
 		<input type="text" name="edicao" value="<?php print $row->edicao ?>"><br><br>
+		
+		<label>Quant.:</label><br>
+		<input type="text" name="edicao" value="<?php print $row->quant ?>"><br><br>
 	
 		<button type="submit" class="button">Editar</button>
 	</form>
