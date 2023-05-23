@@ -20,7 +20,7 @@
 		<input type="text" name="editora" value="<?php print $row->editora ?>"><br><br>
 
 		<label>Edição:</label><br>
-		<input type="text" name="editora" value="<?php print $row->edicao ?>"><br><br>
+		<input type="text" name="edicao" value="<?php print $row->edicao ?>"><br><br>
 	
 		<button type="submit" class="button">Editar</button>
 	</form>
