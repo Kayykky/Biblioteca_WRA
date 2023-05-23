@@ -38,29 +38,50 @@
 			}
 			break;
 
-		case 'editar':
-			$titulo = $_POST['titulo'];
-			$autor = $_POST['autor'];
-			$editora = $_POST['editora'];
-			$edicao = $_POST['edicao'];
+			case 'editar':
+			    $titulo = $_POST['titulo'];
+			    $autor = $_POST['autor'];
+			    $editora = $_POST['editora'];
+			    $edicao = $_POST['edicao'];
+			    $quantNova = $_POST['quantNova'];
 
-			$sql = "UPDATE obra SET 
-						titulo='{$titulo}',
-						autor='{$autor}',
-						editora='{$editora}',
-						edicao='{$edicao}'
-					WHERE id=".$_REQUEST['id'];
+			    $sqlQuantAntiga = "SELECT quant FROM obra WHERE id=".$_REQUEST['id'];
+			    $resQuantAntiga = $conn->query($sqlQuantAntiga);
+			    $rowQuantAntiga = $resQuantAntiga->fetch_assoc();
+			    $quantAntiga = $rowQuantAntiga['quant'];
 
-			$res = $conn->query($sql);
+			    $sql = "UPDATE obra SET 
+			                titulo='{$titulo}',
+			                autor='{$autor}',
+			                editora='{$editora}',
+			                edicao='{$edicao}',
+			                quant='{$quantNova}'
+			            WHERE id=".$_REQUEST['id'];
 
-			if ($res==true) {
-				print "<script>alert('Editado');</script>";
-				print "<script>location.href='?page=default';</script>;";
-			} else{
-				print "<script>alert('ERROR');</script>";
-				print "<script>location.href='?page=default';</script>;";
-			}
-			break;
+			    $res = $conn->query($sql);
+
+			    if ($res==true) {
+			        if ($quantNova > $quantAntiga) {
+			            $dif = $quantNova - $quantAntiga;
+			            $copias_inseridas = 0;
+			            while ($copias_inseridas < $dif) {
+			                $sql = "INSERT INTO acervo (id_obra, status) VALUES (".$_REQUEST['id'].", 'Livre')";
+			                $res = $conn->query($sql);
+			                $copias_inseridas++;
+			            }
+			        } elseif ($quantNova < $quantAntiga) {
+			            $dif = $quantAntiga - $quantNova;
+			            $sql = "DELETE FROM acervo WHERE id_obra=".$_REQUEST['id']." AND status='Livre' LIMIT {$dif}";
+			            $res = $conn->query($sql);
+			        }
+
+			        print "<script>alert('Editado');</script>";
+			        print "<script>location.href='?page=default';</script>;";
+			    } else{
+			        print "<script>alert('ERROR');</script>";
+			        print "<script>location.href='?page=default';</script>;";
+			    }
+			    break;
 
 		case 'excluir':
 
