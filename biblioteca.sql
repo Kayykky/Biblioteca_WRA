@@ -97,6 +97,7 @@ CREATE TABLE `obra` (
   `genero` varchar(20) NOT NULL,
   `editora` varchar(30) NOT NULL,
   `edicao` int(11) NOT NULL,
+  `quant` int(11) NOT NULL,
   `capa` varchar(130) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
